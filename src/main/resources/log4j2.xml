@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <appenders>
+
+        <Console name="ConsolePrint" target="SYSTEM_OUT">
+            <PatternLayout pattern="%msg%n"/>
+            <Filters>
+                <MarkerFilter marker="PRINT"/>
+            </Filters>
+        </Console>
+
+        <File name="ResultFile" fileName="10_SQLAndHibernate/JDBC/src/main/resources/logs/Result.log">
+            <PatternLayout pattern="%msg%n"/>
+            <Filters>
+                <MarkerFilter marker="RESULT"/>            </Filters>
+        </File>
+        <File name="Exceptions" fileName="10_SQLAndHibernate/JDBC/src/main/resources/logs/Exceptions.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm}%msg%n"/>
+            <Filters>
+                <MarkerFilter marker="EXCEPTION"/>
+            </Filters>
+        </File>
+    </appenders>
+
+    <loggers>
+        <root level="info">
+            <appender-ref ref="ConsolePrint"/>
+            <appender-ref ref="ResultFile"/>
+            <appender-ref ref="Exceptions"/>
+        </root>
+    </loggers>
+
+</configuration>
+
+
+
